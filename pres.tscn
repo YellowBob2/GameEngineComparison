@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://lbemkmh3h4u2"]
+
+[ext_resource type="Texture2D" uid="uid://b5o2515ur0vy7" path="res://slides/Inference des types_Page_01.jpg" id="1_msy5d"]
+[ext_resource type="Script" uid="uid://bj4kw0bmldlai" path="res://presentation.gd" id="1_wsbhu"]
+
+[node name="Pres" type="Control" unique_id=150819878]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Presentation" type="Control" parent="." unique_id=195848936]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wsbhu")
+
+[node name="BG" type="ColorRect" parent="Presentation" unique_id=30717025]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Slide" type="TextureRect" parent="Presentation" unique_id=1403191897]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_msy5d")
+expand_mode = 1
+stretch_mode = 5
