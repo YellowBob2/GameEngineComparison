@@ -5,8 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://otiooiryei8t" path="res://assets/OldComps/oldcomp.png" id="2_r0du0"]
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="2_uu6xs"]
 [ext_resource type="Script" uid="uid://cpuypu65gxtiv" path="res://image_viewer.gd" id="5_fos0i"]
-[ext_resource type="Texture2D" uid="uid://b5o2515ur0vy7" path="res://slides/Inference des types_Page_01.jpg" id="6_lgr22"]
-[ext_resource type="Texture2D" uid="uid://cu7m4u56wjb56" path="res://slides/Inference des types_Page_02.jpg" id="7_trn2v"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uu6xs"]
 
@@ -796,7 +794,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_fos0i")
-images = Array[Texture2D]([ExtResource("6_lgr22"), ExtResource("7_trn2v")])
 metadata/_edit_group_ = true
 metadata/_edit_use_anchors_ = true
 

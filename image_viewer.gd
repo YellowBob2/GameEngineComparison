@@ -1,8 +1,28 @@
 extends Control
 
-@export var images: Array[Texture2D]
+@export var folder_path := "res://slides/"
 
+var images := []
 var index := 0
+
+func _ready():
+	load_images_from_folder(folder_path)
+
+func load_images_from_folder(path: String):
+	images.clear()
+	var dir = DirAccess.open(path)
+	if not dir:
+		print("Dossier introuvable :", path)
+		return
+	dir.list_dir_begin()
+	var file_name = dir.get_next()
+	while file_name != "":
+		if not dir.current_is_dir():
+			if file_name.ends_with(".png") or file_name.ends_with(".jpg"):
+				var tex = load(path + file_name)
+				images.append(tex)
+		file_name = dir.get_next()
+	dir.list_dir_end()
 
 func open():
 	visible = true
