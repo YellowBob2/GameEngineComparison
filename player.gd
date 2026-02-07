@@ -1,27 +1,47 @@
-extends Area2D
+extends CharacterBody2D
 
-@export var speed = 400 # How fast the player will move (pixels/sec).
-var screen_size # Size of the game window.
+@export var speed := 200.0
+@export var jump_velocity := -300.0
+@export var gravity := 1200.0
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	screen_size = get_viewport_rect().size
+@onready var cat: AnimatedSprite2D = $Cat
 
+func _physics_process(delta: float) -> void:
+	# Gravity
+	if not is_on_floor():
+		velocity.y += gravity * delta
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	var velocity = Vector2.ZERO # The player's movement vector.
-	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
-	if Input.is_action_pressed("move_up"):
-		velocity.y -= 1
+	# Left/right
+	var dir := Input.get_axis("move_left", "move_right")
+	velocity.x = dir * speed
 
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play()
+	# Jump
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = jump_velocity
+
+	move_and_slide()
+
+	_update_anim(dir)
+
+func _update_anim(dir: float) -> void:
+	# Flip
+	if dir != 0:
+		cat.flip_h = dir < 0
+
+	# Air animations
+	if not is_on_floor():
+		if velocity.y < 0.0:
+			_play_if_changed("jump")
+		else:
+			_play_if_changed("fall")
+		return
+
+	# Ground animations
+	if abs(dir) > 0.01:
+		_play_if_changed("run")
 	else:
-		$AnimatedSprite2D.stop()
+		_play_if_changed("idle")
+
+func _play_if_changed(name: String) -> void:
+	if cat.animation != name:
+		cat.play(name)

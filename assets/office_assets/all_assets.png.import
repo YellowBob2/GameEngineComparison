@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dovixqu5rxcrt"
-path="res://.godot/imported/1_Cat_Idle-Sheet.png-4d7bc2fdb37de065752511fb57966c09.ctex"
+uid="uid://cu8qdm0wa12tp"
+path="res://.godot/imported/all_assets.png-62053e6a3693242ef9c6c874b6af61dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cat/1_Cat_Idle-Sheet.png"
-dest_files=["res://.godot/imported/1_Cat_Idle-Sheet.png-4d7bc2fdb37de065752511fb57966c09.ctex"]
+source_file="res://assets/office_assets/all_assets.png"
+dest_files=["res://.godot/imported/all_assets.png-62053e6a3693242ef9c6c874b6af61dd.ctex"]
 
 [params]
 
@@ -31,10 +31,10 @@ process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
 process/channel_remap/alpha=3
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
