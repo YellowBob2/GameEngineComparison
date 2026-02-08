@@ -15,15 +15,23 @@ func load_images_from_folder(path: String):
 	if not dir:
 		print("Dossier introuvable :", path)
 		return
+	var files := []
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
 	while file_name != "":
 		if not dir.current_is_dir():
 			if file_name.ends_with(".png") or file_name.ends_with(".jpg"):
-				var tex = load(path + file_name)
-				images.append(tex)
+				files.append(file_name)
 		file_name = dir.get_next()
 	dir.list_dir_end()
+
+	# Trier les fichiers par ordre alphabétique
+	files.sort()  
+
+	# Charger les textures dans l’ordre
+	for f in files:
+		images.append(load(path + f))
+
 
 func open():
 	visible = true
