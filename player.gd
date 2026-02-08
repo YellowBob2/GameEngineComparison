@@ -6,6 +6,11 @@ extends CharacterBody2D
 
 @onready var cat: AnimatedSprite2D = $Cat
 
+var initialPos := Vector2(0, 0)
+
+func _ready() -> void:
+	initialPos = position
+
 func _physics_process(delta: float) -> void:
 	# Gravity
 	if not is_on_floor():
@@ -22,6 +27,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	_update_anim(dir)
+	
+	if (position.y > 350):
+		position = initialPos
 
 func _update_anim(dir: float) -> void:
 	# Flip
