@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://otiooiryei8t" path="res://assets/OldComps/oldcomp.png" id="2_r0du0"]
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="2_uu6xs"]
 [ext_resource type="Script" uid="uid://cpuypu65gxtiv" path="res://image_viewer.gd" id="5_fos0i"]
+[ext_resource type="Texture2D" uid="uid://dhfkgch17rtii" path="res://assets/OldComps/frame_cassee.png" id="6_3dxm6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uu6xs"]
 
@@ -797,16 +798,26 @@ script = ExtResource("5_fos0i")
 metadata/_edit_group_ = true
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Slides/ImageViewer" unique_id=1016857545]
+[node name="Screen" type="TextureRect" parent="Slides/ImageViewer" unique_id=1016857545]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.07
+anchor_right = 0.98
+anchor_bottom = 0.92
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Frame" type="TextureRect" parent="Slides/ImageViewer" unique_id=1131099711]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-expand_mode = 1
-stretch_mode = 5
+texture = ExtResource("6_3dxm6")
 
 [connection signal="body_entered" from="Computer/Area2D" to="Computer" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Computer/Area2D" to="Computer" method="_on_area_2d_body_exited"]

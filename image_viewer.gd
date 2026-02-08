@@ -1,6 +1,7 @@
 extends Control
 
 @export var folder_path := "res://slides/"
+@onready var screen = $Screen
 
 var images := []
 var index := 0
@@ -33,7 +34,7 @@ func close():
 	visible = false
 
 func _update_image():
-	$TextureRect.texture = images[index]
+	screen.texture = images[index]
 
 func _unhandled_input(event):
 	if not visible:
