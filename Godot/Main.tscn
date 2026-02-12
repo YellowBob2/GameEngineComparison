@@ -143,6 +143,11 @@ scale = Vector2(1.1, 1.1)
 [node name="Slides" type="CanvasLayer" parent="." unique_id=84780997]
 
 [node name="GUI" parent="Slides" unique_id=2011686977 node_paths=PackedStringArray("frame") instance=ExtResource("7_trn2v")]
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.05
+anchor_right = 0.98
+anchor_bottom = 0.92
 size_flags_horizontal = 4
 size_flags_vertical = 4
 frame = NodePath("../ImageViewer/Frame")

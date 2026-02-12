@@ -98,7 +98,7 @@ func _input(event):
 
 	if event is InputEventKey:
 		# Fix for the Dot (.) key
-		if event.pressed and (event.keycode == KEY_PERIOD or event.keycode == KEY_KP_PERIOD):
+		if event.pressed and (event.keycode == KEY_PERIOD or event.keycode == KEY_TAB):
 			current_browser.execute_javascript("document.execCommand('insertText', false, '.');")
 			return 
 
