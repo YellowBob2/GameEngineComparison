@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://otiooiryei8t" path="res://assets/OldComps/oldcomp.png" id="2_r0du0"]
 [ext_resource type="Texture2D" uid="uid://cod2mtx0g7auh" path="res://assets/dungeon/spr_torch.png" id="2_trn2v"]
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="2_uu6xs"]
-[ext_resource type="Script" uid="uid://cpuypu65gxtiv" path="res://image_viewer.gd" id="5_fos0i"]
 [ext_resource type="Texture2D" uid="uid://dhfkgch17rtii" path="res://assets/OldComps/frame_cassee.png" id="6_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://cg0dpkfqho8xs" path="res://CEF.tscn" id="7_trn2v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_03owx"]
 atlas = ExtResource("2_trn2v")
@@ -102,7 +102,7 @@ sprite_frames = SubResource("SpriteFrames_c6i3y")
 
 [node name="Computer" type="Node2D" parent="." unique_id=923155288 node_paths=PackedStringArray("image_viewer")]
 script = ExtResource("2_cm0pq")
-image_viewer = NodePath("../Slides/ImageViewer")
+image_viewer = NodePath("../Slides/GUI")
 
 [node name="Sprite2D" type="Sprite2D" parent="Computer" unique_id=212720593]
 position = Vector2(48.000004, -17)
@@ -142,38 +142,37 @@ scale = Vector2(1.1, 1.1)
 
 [node name="Slides" type="CanvasLayer" parent="." unique_id=84780997]
 
-[node name="ImageViewer" type="Control" parent="Slides" unique_id=645325308]
-visible = false
+[node name="GUI" parent="Slides" unique_id=2011686977 node_paths=PackedStringArray("frame") instance=ExtResource("7_trn2v")]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+frame = NodePath("../ImageViewer/Frame")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBox" parent="Slides/GUI/Panel" parent_id_path=PackedInt32Array(2011686977, 1938482197) index="0" unique_id=1267377128]
+alignment = 1
+
+[node name="ImageViewer" type="Control" parent="Slides" unique_id=144846137]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("5_fos0i")
+mouse_filter = 2
 metadata/_edit_group_ = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Screen" type="TextureRect" parent="Slides/ImageViewer" unique_id=1016857545]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.02
-anchor_top = 0.07
-anchor_right = 0.98
-anchor_bottom = 0.92
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-expand_mode = 1
-
-[node name="Frame" type="TextureRect" parent="Slides/ImageViewer" unique_id=1131099711]
+[node name="Frame" type="TextureRect" parent="Slides/ImageViewer" unique_id=2056393362]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("6_3dxm6")
 
 [connection signal="body_entered" from="Computer/Area2D" to="Computer" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Computer/Area2D" to="Computer" method="_on_area_2d_body_exited"]
+
+[editable path="Slides/GUI"]

@@ -8,6 +8,7 @@ var index := 0
 
 func _ready():
 	load_images_from_folder(folder_path)
+	
 
 func load_images_from_folder(path: String):
 	images.clear()

@@ -1,0 +1,6 @@
+2026/02/12-18:54:53.595 6fe3 Reusing MANIFEST /home/picsu/Documents/Prog Comparee/Pres2/GameEngineComparison/Godot/cef_artifacts/linux/cache/Default/Local Storage/leveldb/MANIFEST-000001
+2026/02/12-18:54:53.602 6fe3 Recovering log #7
+2026/02/12-18:54:53.602 6fe3 (ignoring error) /home/picsu/Documents/Prog Comparee/Pres2/GameEngineComparison/Godot/cef_artifacts/linux/cache/Default/Local Storage/leveldb/000007.log: dropping 1025 bytes; Corruption: checksum mismatch
+2026/02/12-18:54:53.602 6fe3 (ignoring error) /home/picsu/Documents/Prog Comparee/Pres2/GameEngineComparison/Godot/cef_artifacts/linux/cache/Default/Local Storage/leveldb/000007.log: dropping 14 bytes; Corruption: missing start of fragmented record(2)
+2026/02/12-18:54:53.602 6fe3 (ignoring error) /home/picsu/Documents/Prog Comparee/Pres2/GameEngineComparison/Godot/cef_artifacts/linux/cache/Default/Local Storage/leveldb/000007.log: dropping 265 bytes; Corruption: checksum mismatch
+2026/02/12-18:54:53.602 6fe3 Reusing old log /home/picsu/Documents/Prog Comparee/Pres2/GameEngineComparison/Godot/cef_artifacts/linux/cache/Default/Local Storage/leveldb/000007.log 
